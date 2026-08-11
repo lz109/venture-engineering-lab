@@ -109,10 +109,29 @@ h2{margin:.1rem 0 0;color:var(--green);font-size:clamp(1.85rem,3.2vw,2.75rem);fo
 .switch button[aria-pressed="true"]{background:var(--orange);border-color:var(--orange);color:#fff}
 .group{margin-bottom:1.8rem;background:#fff;border:1px solid var(--line)}
 .group:last-child{margin-bottom:0}
-.group-head{padding:1rem 1.1rem;border-bottom:1px solid var(--line);background:var(--green-soft)}
-.group-count{float:right;color:var(--orange);font-weight:700;font-size:.88rem}
-.group-title{margin:0;color:var(--green);font-size:1.05rem;line-height:1.3}
-.group-blurb{margin:.35rem 0 0;color:var(--muted);font-size:.92rem;max-width:56rem}
+.group-head{border-bottom:1px solid var(--line);background:var(--green-soft)}
+.group-toggle{
+  width:100%;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:1rem;
+  align-items:start;
+  padding:1rem 1.1rem;
+  border:0;
+  background:transparent;
+  color:inherit;
+  text-align:left;
+  cursor:pointer;
+  font:inherit;
+}
+.group-toggle:hover .group-title{color:var(--orange)}
+.group-toggle:focus-visible{outline:2px solid var(--orange);outline-offset:-2px}
+.group-count{color:var(--orange);font-weight:700;font-size:.88rem;white-space:nowrap}
+.group-count::after{content:" +";font-weight:700}
+.group.is-open .group-count::after{content:" -"}
+.group-title{display:block;margin:0;color:var(--green);font-size:1.05rem;font-weight:700;line-height:1.3}
+.group-blurb{display:block;margin:.35rem 0 0;color:var(--muted);font-size:.92rem;max-width:56rem}
+.group-body[hidden]{display:none}
 .item{padding:1rem 1.1rem;border-bottom:1px solid var(--line)}
 .item:last-child{border-bottom:0}
 .item-title{margin:0 0 .2rem;color:var(--green);font-size:1.02rem;line-height:1.3}
@@ -471,11 +490,28 @@ function itemHTML(p, mode){
 }
 function render(mode){
   const groups = mode === "theme" ? THEMES : STAGES;
-  list.innerHTML = groups.map(g=>{
+  list.innerHTML = groups.map((g, index)=>{
     const rows = PAPERS.filter(p => (mode === "theme" ? p.theme : p.stage) === g.id);
     if(!rows.length) return "";
-    return '<div class="group"><div class="group-head"><span class="group-count">'+rows.length+'</span><h3 class="group-title">'+esc(g.title)+'</h3><p class="group-blurb">'+esc(g.blurb)+'</p></div>'+rows.map(p=>itemHTML(p,mode)).join("")+'</div>';
+    const bodyId = 'research-group-'+esc(mode)+'-'+esc(g.id);
+    const open = index === 0;
+    return '<div class="group'+(open ? ' is-open' : '')+'"><div class="group-head">'
+      + '<button class="group-toggle" type="button" aria-expanded="'+String(open)+'" aria-controls="'+bodyId+'">'
+      + '<span><span class="group-title">'+esc(g.title)+'</span><span class="group-blurb">'+esc(g.blurb)+'</span></span>'
+      + '<span class="group-count">'+rows.length+' projects</span></button></div>'
+      + '<div class="group-body" id="'+bodyId+'"'+(open ? '' : ' hidden')+'>'
+      + rows.map(p=>itemHTML(p,mode)).join("") + '</div></div>';
   }).join("");
+  list.querySelectorAll(".group-toggle").forEach(btn=>{
+    btn.addEventListener("click",()=>{
+      const group = btn.closest(".group");
+      const body = document.getElementById(btn.getAttribute("aria-controls"));
+      const open = btn.getAttribute("aria-expanded") === "true";
+      btn.setAttribute("aria-expanded", String(!open));
+      group.classList.toggle("is-open", !open);
+      body.hidden = open;
+    });
+  });
 }
 document.querySelectorAll(".switch button").forEach(btn=>{
   btn.addEventListener("click",()=>{
