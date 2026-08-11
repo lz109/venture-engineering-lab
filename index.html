@@ -160,6 +160,13 @@ h2{margin:.1rem 0 0;color:var(--green);font-size:clamp(1.85rem,3.2vw,2.75rem);fo
 .contact-item{background:var(--paper);border-top:3px solid var(--orange);padding:1rem}
 .contact-item dt{margin:0 0 .25rem;color:var(--muted);font-size:.76rem;text-transform:uppercase;letter-spacing:.08em;font-weight:700}
 .contact-item dd{margin:0;color:var(--green);font-weight:700}
+.people-grid{display:grid;gap:1rem}
+@media(min-width:760px){.people-grid{grid-template-columns:1.1fr .9fr .9fr}}
+.person{background:#fff;border:1px solid var(--line);border-top:5px solid var(--orange);padding:1.15rem}
+.person.secondary{border-top-color:var(--green-2)}
+.person h3{margin:0 0 .3rem;color:var(--green);font-size:1.1rem}
+.person .role{margin:0 0 .7rem;color:var(--orange);font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.person p{margin:0;color:var(--text);font-size:.95rem}
 footer{background:var(--green-dark);color:rgba(255,255,255,.78);font-size:.82rem}
 footer .wrap{padding-top:1.2rem;padding-bottom:1.2rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 @media(max-width:760px){
@@ -180,10 +187,10 @@ footer .wrap{padding-top:1.2rem;padding-bottom:1.2rem;display:flex;justify-conte
     </a>
     <div class="nav-links">
       <a class="active" href="#overview">Overview</a>
+      <a href="#offerings">Offerings</a>
       <a href="#research">Research</a>
       <a href="#funding">Funding</a>
-      <a href="#projects">Projects</a>
-      <a href="#capstones">Capstones</a>
+      <a href="#people">People</a>
       <a href="https://i-school.hku.hk/people/li-fanny">Director Profile</a>
     </div>
   </div>
@@ -193,26 +200,26 @@ footer .wrap{padding-top:1.2rem;padding-bottom:1.2rem;display:flex;justify-conte
   <section class="hero">
     <div class="hero-grid">
       <div>
-        <p class="eyebrow">AI-native venture building and evaluation</p>
+        <p class="eyebrow">AI-native venture building</p>
         <h1>Venture Engineering Lab</h1>
-        <p class="lead">A live research and education lab at HKU School of Innovation building systems that help founders, students, universities, and ecosystem partners evaluate ventures, design experiments, and move promising ideas toward deployment.</p>
+        <p class="lead">VEL helps founders, students, researchers, and ecosystem teams evaluate ventures, design experiments, and build evidence for execution.</p>
         <div class="hero-actions">
-          <a class="btn" href="#research">View Research</a>
-          <a class="btn secondary" href="#contact">Work With Us</a>
+          <a class="btn" href="#offerings">Get Started</a>
+          <a class="btn secondary" href="#research">Learn More</a>
         </div>
       </div>
       <figure class="hero-visual">
         <img src="assets/venture-lab-hero.jpg" alt="Students and researchers working in a university innovation lab with analytics screens and prototype materials">
-        <figcaption class="caption">Research-backed venture evaluation, AI mentorship, and entrepreneurship infrastructure for HKU's innovation ecosystem.</figcaption>
+        <figcaption class="caption">A research initiative at HKU School of Innovation.</figcaption>
       </figure>
     </div>
   </section>
 
   <div class="metrics" aria-label="Lab highlights">
     <div class="metrics-grid">
-      <div class="metric"><strong>6</strong><span>Core systems</span></div>
+      <div class="metric"><strong>6</strong><span>Offerings</span></div>
       <div class="metric"><strong>14</strong><span>Research threads</span></div>
-      <div class="metric"><strong>4</strong><span>Capstone tracks</span></div>
+      <div class="metric"><strong>4</strong><span>Learner tracks</span></div>
       <div class="metric"><strong>HKU</strong><span>I-School home</span></div>
     </div>
   </div>
@@ -221,23 +228,43 @@ footer .wrap{padding-top:1.2rem;padding-bottom:1.2rem;display:flex;justify-conte
     <div class="wrap section-grid">
       <header>
         <p class="eyebrow">Overview</p>
-        <h2>From research questions to operating venture systems.</h2>
+        <h2>AI-augmented venture development under uncertainty.</h2>
       </header>
       <div>
-        <p class="section-intro">The Venture Engineering Lab studies a practical bottleneck in innovation: how early-stage ventures are judged before their value is knowable. The lab translates that research into tools for venture evaluation, AI mentorship, policy monitoring, and AI-native entrepreneurship education.</p>
+        <p class="section-intro">VEL turns venture research into tools, courses, and live experiments for HKU's innovation ecosystem.</p>
         <div class="grid-3">
           <article class="panel orange">
             <h3>Evaluate</h3>
-            <p>Structure venture, patent, and pitch-deck assessment so expert, peer, crowd, and AI judgments can be compared and improved.</p>
+            <p>Assess ventures, patents, and pitch decks with comparable human and AI judgments.</p>
           </article>
           <article class="panel green">
             <h3>Experiment</h3>
-            <p>Help founders and student teams turn uncertainty into testable hypotheses, field experiments, and evidence-based decisions.</p>
+            <p>Turn uncertainty into hypotheses, field tests, and decision-ready evidence.</p>
           </article>
           <article class="panel orange">
             <h3>Educate</h3>
-            <p>Convert research findings into open courses, capstone projects, and AI-native learning experiences for venture builders.</p>
+            <p>Offer capstones and courses where learners build on live lab systems.</p>
           </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="offerings">
+    <div class="wrap section-grid">
+      <header>
+        <p class="eyebrow">Offerings</p>
+        <h2>What VEL offers.</h2>
+      </header>
+      <div>
+        <p class="section-intro">Six ways to work with the lab.</p>
+        <div class="project-list">
+          <article class="project"><div><h3>Venture Evaluation</h3><p>Rubrics and AI-assisted review for early-stage ideas, pitch decks, and venture claims.</p></div><span>For founders</span></article>
+          <article class="project"><div><h3>AI Mentorship</h3><p>Feedback loops that help teams reframe problems and prepare for human review.</p></div><span>For teams</span></article>
+          <article class="project"><div><h3>Patent Assessment</h3><p>Decision support for disclosure quality, filing readiness, and licensing evidence.</p></div><span>For scientists</span></article>
+          <article class="project"><div><h3>Ecosystem Metrics</h3><p>Indicators for tracking innovation activity across HKU and the Greater Bay Area.</p></div><span>For partners</span></article>
+          <article class="project"><div><h3>Capstone Studio</h3><p>Student projects that ship features into active venture and AI systems.</p></div><span>For learners</span></article>
+          <article class="project"><div><h3>Open Courses</h3><p>Public learning experiences in AI-native entrepreneurship and venture methods.</p></div><span>For educators</span></article>
         </div>
       </div>
     </div>
@@ -250,7 +277,7 @@ footer .wrap{padding-top:1.2rem;padding-bottom:1.2rem;display:flex;justify-conte
         <h2>How ventures are judged before their value is knowable.</h2>
       </header>
       <div>
-        <p class="section-intro">The research program follows the full evaluation chain: the structure of judgment, the signals that make ventures legible, who enters entrepreneurship, and the infrastructure universities and regions build around innovation.</p>
+        <p class="section-intro">Research focuses on how ventures are evaluated before their value is knowable.</p>
         <div class="media-band">
           <img src="assets/venture-evaluation-research.jpg" alt="Research materials, analytics dashboards, and venture evaluation documents on a desk">
           <div class="grid-2">
@@ -291,10 +318,10 @@ footer .wrap{padding-top:1.2rem;padding-bottom:1.2rem;display:flex;justify-conte
     <div class="wrap section-grid">
       <header>
         <p class="eyebrow">Lab Projects</p>
-        <h2>Tools for university innovation ecosystems.</h2>
+        <h2>Systems in development.</h2>
       </header>
       <div>
-        <p class="section-intro">The lab works with HKU innovation and entrepreneurship units to build systems that can be used by founders, scientists, program teams, students, and policy partners.</p>
+        <p class="section-intro">Current builds with HKU ecosystem partners.</p>
         <div class="project-list">
           <article class="project"><div><h3>GBA Ecosystem Metrics</h3><p>Longitudinal indicators for Greater Bay Area innovation and entrepreneurship.</p></div><span>with TEA</span></article>
           <article class="project"><div><h3>Patent Evaluation System</h3><p>Assessment tools for university patent disclosures, filing readiness, and licensing evidence.</p></div><span>with TTO</span></article>
@@ -311,13 +338,13 @@ footer .wrap{padding-top:1.2rem;padding-bottom:1.2rem;display:flex;justify-conte
     <div class="wrap section-grid">
       <header>
         <p class="eyebrow">For Learners</p>
-        <h2>Capstones that ship into live systems.</h2>
+        <h2>Build with VEL.</h2>
       </header>
       <div>
         <div class="media-band">
           <img src="assets/capstone-studio.jpg" alt="Students building prototypes and software systems in a university studio">
           <div>
-            <p class="section-intro">The lab runs capstone tracks for undergraduate and master's students at HKU and from other institutions. Projects are scoped so student teams can build useful modules for active lab systems, not just final reports.</p>
+            <p class="section-intro">Capstone teams build useful modules for active lab systems.</p>
             <div class="grid-2">
               <article class="panel orange"><h3>Live AI Systems</h3><p>Build features for AI Career Coach, TriEval, AI Literacy Passport, PolicyIntel, and AI mentors.</p></article>
               <article class="panel green"><h3>Hardware Entrepreneurship</h3><p>Create readiness scorers, business model explorers, and community pulse tools.</p></article>
@@ -330,17 +357,43 @@ footer .wrap{padding-top:1.2rem;padding-bottom:1.2rem;display:flex;justify-conte
     </div>
   </section>
 
+  <section id="people">
+    <div class="wrap section-grid">
+      <header>
+        <p class="eyebrow">People</p>
+        <h2>The team behind VEL.</h2>
+      </header>
+      <div class="people-grid">
+        <article class="person">
+          <h3>Zhuoxuan (Fanny) Li</h3>
+          <p class="role">Director</p>
+          <p>Assistant Professor, HKU School of Innovation. Researches venture evaluation, AI gatekeeping, user innovation, and entrepreneurship ecosystems.</p>
+        </article>
+        <article class="person secondary">
+          <h3>Student Builders</h3>
+          <p class="role">Capstone and RA teams</p>
+          <p>Undergraduate and master's students build features, run studies, and test AI-native venture workflows.</p>
+        </article>
+        <article class="person secondary">
+          <h3>Ecosystem Partners</h3>
+          <p class="role">HKU units and collaborators</p>
+          <p>Partners bring venture, patent, course, and policy problems into the lab as live settings.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <section id="faq">
     <div class="wrap section-grid">
       <header>
         <p class="eyebrow">FAQ</p>
-        <h2>Who should get involved?</h2>
+        <h2>Who is VEL for?</h2>
       </header>
       <div class="faq">
-        <details open><summary>For students</summary><p>Students can join through capstone projects, research assistantships, and course-linked venture-building work.</p></details>
-        <details><summary>For HKU partners</summary><p>Partner units can work with the lab on evaluation systems, mentoring tools, policy analytics, and program infrastructure.</p></details>
-        <details><summary>For founders and scientists</summary><p>Founders and research teams can use lab workflows to clarify venture assumptions, prepare for evaluation, and design evidence-generating experiments.</p></details>
-        <details><summary>For researchers</summary><p>The lab welcomes collaborators studying entrepreneurship, AI evaluation, organizational theory, innovation policy, and technology commercialization.</p></details>
+        <details open><summary>Learners</summary><p>Capstones, research assistantships, and course-linked builds.</p></details>
+        <details><summary>Partners</summary><p>Evaluation tools, mentoring systems, policy analytics, and program infrastructure.</p></details>
+        <details><summary>Founders and scientists</summary><p>Venture assessment, experiment design, and evidence-building support.</p></details>
+        <details><summary>Researchers</summary><p>Collaborations on entrepreneurship, AI evaluation, innovation policy, and commercialization.</p></details>
       </div>
     </div>
   </section>
@@ -352,7 +405,7 @@ footer .wrap{padding-top:1.2rem;padding-bottom:1.2rem;display:flex;justify-conte
         <h2>Work with Venture Engineering Lab.</h2>
       </header>
       <div>
-        <p class="section-intro">Venture Engineering Lab is directed by Zhuoxuan (Fanny) Li at HKU School of Innovation. For collaboration, student projects, or ecosystem partnerships, get in touch by email.</p>
+        <p class="section-intro">For collaborations, student projects, or ecosystem partnerships, get in touch.</p>
         <dl class="contact-grid">
           <div class="contact-item"><dt>Email</dt><dd><a href="mailto:zhuoxli@hku.hk">zhuoxli@hku.hk</a></dd></div>
           <div class="contact-item"><dt>Institution</dt><dd>HKU School of Innovation</dd></div>
