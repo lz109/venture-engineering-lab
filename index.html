@@ -93,6 +93,39 @@ h2{margin:.1rem 0 0;color:var(--green);font-size:clamp(1.85rem,3.2vw,2.75rem);fo
 .panel.green{border-top:5px solid var(--green-2)}
 .panel h3{margin:0 0 .45rem;color:var(--green);font-size:1.08rem;line-height:1.28}
 .panel p{margin:0;color:var(--text);font-size:.96rem}
+.switch{display:flex;align-items:center;gap:.55rem;flex-wrap:wrap;margin:0 0 1.5rem}
+.switch-label{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-right:.25rem}
+.switch button{
+  border:1px solid var(--line);
+  background:#fff;
+  color:var(--text);
+  min-height:36px;
+  padding:.45rem .85rem;
+  cursor:pointer;
+  font:inherit;
+  font-weight:700;
+  font-size:.86rem;
+}
+.switch button[aria-pressed="true"]{background:var(--orange);border-color:var(--orange);color:#fff}
+.group{margin-bottom:1.8rem;background:#fff;border:1px solid var(--line)}
+.group:last-child{margin-bottom:0}
+.group-head{padding:1rem 1.1rem;border-bottom:1px solid var(--line);background:var(--green-soft)}
+.group-count{float:right;color:var(--orange);font-weight:700;font-size:.88rem}
+.group-title{margin:0;color:var(--green);font-size:1.05rem;line-height:1.3}
+.group-blurb{margin:.35rem 0 0;color:var(--muted);font-size:.92rem;max-width:56rem}
+.item{padding:1rem 1.1rem;border-bottom:1px solid var(--line)}
+.item:last-child{border-bottom:0}
+.item-title{margin:0 0 .2rem;color:var(--green);font-size:1.02rem;line-height:1.3}
+.item-sub{margin:0 0 .55rem;max-width:56rem;color:#6f736e}
+.item-meta{display:flex;flex-wrap:wrap;gap:.4rem .7rem;align-items:center;color:var(--muted);font-size:.82rem}
+.item-meta .me{color:var(--green);font-weight:700}
+.tag{border:1px solid var(--line);background:#fff;padding:.12rem .42rem;font-size:.72rem;color:var(--green-dark);font-weight:700}
+.tag.fund{color:var(--orange);border-color:#ffc5b4;background:var(--orange-soft)}
+.subhead{margin:1.8rem 0 .7rem;color:var(--green);font-size:.82rem;text-transform:uppercase;letter-spacing:.09em;font-weight:700;border-bottom:1px solid var(--line);padding-bottom:.45rem}
+.grant{display:grid;gap:.25rem;padding:.9rem 0;border-bottom:1px solid var(--line)}
+@media(min-width:720px){.grant{grid-template-columns:1fr 12rem;gap:1.5rem}}
+.grant h3{margin:0;color:var(--green);font-size:1rem;line-height:1.35}
+.grant span{color:var(--muted);font-size:.86rem}
 .grid-2,.grid-3{display:grid;gap:1rem}
 @media(min-width:760px){.grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}}
 .walkthrough{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);counter-reset:step}
@@ -147,8 +180,8 @@ footer .wrap{padding-top:1.2rem;padding-bottom:1.2rem;display:flex;justify-conte
     </a>
     <div class="nav-links">
       <a class="active" href="#overview">Overview</a>
-      <a href="#platform">Platform</a>
-      <a href="#systems">Systems</a>
+      <a href="#research">Research</a>
+      <a href="#funding">Funding</a>
       <a href="#projects">Projects</a>
       <a href="#capstones">Capstones</a>
       <a href="https://i-school.hku.hk/people/li-fanny">Director Profile</a>
@@ -164,7 +197,7 @@ footer .wrap{padding-top:1.2rem;padding-bottom:1.2rem;display:flex;justify-conte
         <h1>Venture Engineering Lab</h1>
         <p class="lead">A live research and education lab at HKU School of Innovation building systems that help founders, students, universities, and ecosystem partners evaluate ventures, design experiments, and move promising ideas toward deployment.</p>
         <div class="hero-actions">
-          <a class="btn" href="#platform">See the Lab in Action</a>
+          <a class="btn" href="#research">View Research</a>
           <a class="btn secondary" href="#contact">Work With Us</a>
         </div>
       </div>
@@ -210,58 +243,46 @@ footer .wrap{padding-top:1.2rem;padding-bottom:1.2rem;display:flex;justify-conte
     </div>
   </section>
 
-  <section id="platform">
+  <section id="research">
     <div class="wrap section-grid">
       <header>
-        <p class="eyebrow">Walkthrough</p>
-        <h2>See the lab platform in action.</h2>
+        <p class="eyebrow">Research</p>
+        <h2>How ventures are judged before their value is knowable.</h2>
       </header>
       <div>
-        <p class="section-intro">Inspired by product-style research labs, Venture Engineering Lab is organized around repeatable workflows: intake, diagnosis, evaluation, mentoring, experimentation, and learning. Each workflow can serve real users while also generating research-grade evidence.</p>
-        <div class="walkthrough">
-          <article class="step"><h3>Venture Intake</h3><p>Teams submit venture ideas, pitch decks, patents, or project briefs with structured context.</p></article>
-          <article class="step"><h3>Signal Mapping</h3><p>The system identifies claims, categories, evidence gaps, stakeholders, and uncertainty points.</p></article>
-          <article class="step"><h3>Evaluation</h3><p>Experts, peers, crowds, and AI evaluators assess the venture through comparable rubrics.</p></article>
-          <article class="step"><h3>Mentorship</h3><p>AI mentors give interim feedback, help founders reframe problems, and prepare for human review.</p></article>
-          <article class="step"><h3>Experiment Design</h3><p>Teams convert feedback into customer-discovery, prototype, market, or licensing experiments.</p></article>
-          <article class="step"><h3>Evidence Review</h3><p>Results are tracked against assumptions, milestones, and evaluator disagreement.</p></article>
-          <article class="step"><h3>Learning Loop</h3><p>Course and capstone teams use the same workflow to learn venture methods by doing.</p></article>
-          <article class="step"><h3>Ecosystem Insight</h3><p>Aggregated patterns support policy analytics, program design, and regional ecosystem monitoring.</p></article>
+        <p class="section-intro">The research program follows the full evaluation chain: the structure of judgment, the signals that make ventures legible, who enters entrepreneurship, and the infrastructure universities and regions build around innovation.</p>
+        <div class="media-band">
+          <img src="assets/venture-evaluation-research.jpg" alt="Research materials, analytics dashboards, and venture evaluation documents on a desk">
+          <div class="grid-2">
+            <article class="panel green"><h3>Human and machine gatekeepers</h3><p>Field experiments and system studies on expert, peer, crowd, and AI-based venture assessment.</p></article>
+            <article class="panel orange"><h3>Signals and categories</h3><p>How templates, categories, regulation, and platform design alter what evaluators notice and reward.</p></article>
+          </div>
         </div>
+        <div class="switch" role="group" aria-label="Organize research by">
+          <span class="switch-label">Organize by</span>
+          <button type="button" data-mode="theme" aria-pressed="true">Question</button>
+          <button type="button" data-mode="stage" aria-pressed="false">Stage</button>
+        </div>
+        <div id="research-list"></div>
       </div>
     </div>
   </section>
 
-  <section id="systems">
+  <section id="funding">
     <div class="wrap section-grid">
       <header>
-        <p class="eyebrow">System Architecture</p>
-        <h2>A research instrument that also delivers a service.</h2>
+        <p class="eyebrow">Funding</p>
+        <h2>Grants and projects under development.</h2>
       </header>
       <div>
-        <div class="media-band">
-          <img src="assets/venture-evaluation-research.jpg" alt="Research materials, analytics dashboards, and venture evaluation documents on a desk">
-          <div class="grid-2">
-            <article class="panel green"><h3>Venture Data Layer</h3><p>Structured venture, team, patent, pitch, mentor, and ecosystem records.</p></article>
-            <article class="panel orange"><h3>Evaluator Layer</h3><p>Expert, peer, crowd, and AI assessment channels with comparable rubrics.</p></article>
-            <article class="panel orange"><h3>Mentor Layer</h3><p>AI-guided reframing, feedback, experiment planning, and learning support.</p></article>
-            <article class="panel green"><h3>Research Layer</h3><p>Field experiments and analytics on judgment, legitimacy, entry, and innovation infrastructure.</p></article>
-          </div>
-        </div>
-        <div class="architecture" aria-label="System flow">
-          <div class="flow">
-            <div class="node orange">Venture Request</div>
-            <div class="arrow">→</div>
-            <div class="node">Orchestrator</div>
-            <div class="arrow">→</div>
-            <div class="node orange">Evaluation Artifact</div>
-            <div class="node">Mentor Feedback</div>
-            <div class="arrow">→</div>
-            <div class="node orange">Experiment Plan</div>
-            <div class="arrow">→</div>
-            <div class="node">Decision Support</div>
-          </div>
-        </div>
+        <p class="subhead">Awarded</p>
+        <article class="grant"><h3>Structure, Technology, and Judgment: A Field Experiment on How Experts, Peers, and Crowds Evaluate Early-Stage Ventures</h3><span>Principal Investigator · RGC Early Career Scheme</span></article>
+        <article class="grant"><h3>Theory of the Firm at the Lower Bound: How AI-Enabled One-Person Companies Test the Foundations of Organizational Theory</h3><span>Principal Investigator · HKU Lasting Impact Fund, Young Scholar Scheme</span></article>
+        <p class="subhead">In Preparation</p>
+        <article class="grant"><h3>A Policy Research Framework for Monitoring Hong Kong's Innovation and Entrepreneurship Ecosystem</h3><span>Principal Investigator · Target: Public Policy Research Funding Scheme</span></article>
+        <article class="grant"><h3>A Course-Level Operating Infrastructure for Enterprise-Involved Innovation Courses</h3><span>Project Coordinator · Target: Collaborative Research Fund / YCRG</span></article>
+        <article class="grant"><h3>Entrepreneurship in the Gig Economy: Freelancer Recruitment Strategy in Early-Stage Entrepreneurship</h3><span>Principal Investigator · Target: NSFC</span></article>
+        <div class="callout"><strong>Collaborators welcome.</strong> Current proposals are open to co-investigators working on policy analytics, course-infrastructure design, venture data, and gig-economy entrepreneurship.</div>
       </div>
     </div>
   </section>
@@ -351,6 +372,65 @@ footer .wrap{padding-top:1.2rem;padding-bottom:1.2rem;display:flex;justify-conte
 </footer>
 
 <script>
+const THEMES = [
+  {id:"judging", title:"Judging ventures: experts, peers, crowds, machines", blurb:"How evaluators, human and algorithmic, form judgments about ventures nobody can yet verify."},
+  {id:"legitimacy", title:"Categories, legitimacy, and market signals", blurb:"How templates, categories, and platform rules shape which ventures get read as credible."},
+  {id:"builders", title:"Who builds: entry, failure, and the boundaries of the firm", blurb:"Who starts firms, what stops them, and how small a firm can get before the theory breaks."},
+  {id:"infrastructure", title:"Innovation infrastructure: ecosystems, policy, and education", blurb:"How regions and universities build the capacity to innovate, and how that capacity is measured."},
+];
+const STAGES = [
+  {id:"working", title:"Working papers", blurb:"Drafted and circulating."},
+  {id:"progress", title:"In progress", blurb:"Design, data collection, or early analysis."},
+];
+const PAPERS = [
+  {theme:"judging", stage:"working", title:"Structure, Technology, and Judgment", sub:"A field experiment on how experts, peers, and crowds evaluate early-stage ventures", authors:["Zhuoxuan Li"], fund:"RGC ECS"},
+  {theme:"judging", stage:"working", title:"Designing the Machine Gatekeeper", sub:"How AI evaluator design shapes the assessment of innovation", authors:["Zhuoxuan Li"]},
+  {theme:"judging", stage:"working", title:"When AI Judges Startups", sub:"Reproducibility, shared bias, and the limits of scalable venture evaluation", authors:["Zhuoxuan Li"]},
+  {theme:"judging", stage:"working", title:"Learning by Evaluating", sub:"How peer evaluation shapes pitch quality in venture acceleration", authors:["Zhuoxuan Li","Charles Eesley"]},
+  {theme:"legitimacy", stage:"working", title:"When Templates Backfire", sub:"Organizational identity, attribute interpretation, and performance in pluralistic settings", authors:["Zhuoxuan Li","Robert Eberhart","Charles Eesley","Andreea Gorbatai"]},
+  {theme:"legitimacy", stage:"working", title:"Shifting Evaluation Logics", sub:"Temporal re-weighting of category and firm signals in markets under regulatory shocks", authors:["Zhuoxuan Li"]},
+  {theme:"legitimacy", stage:"working", title:"Platform Gatekeeping Strategy and Crowdfunded Tech Venture Performance", authors:["Zhuoxuan Li","Charles Eesley"]},
+  {theme:"builders", stage:"working", title:"Fear of Failure and the Margins of Maker Entrepreneurship", authors:["Zhuoxuan Li","Robert Eberhart","Charles Eesley","Andreea Gorbatai"]},
+  {theme:"builders", stage:"progress", title:"Theory of the Firm at the Lower Bound", sub:"How AI-enabled one-person companies test the foundations of organizational theory", authors:["Zhuoxuan Li"], fund:"HKU LIF"},
+  {theme:"builders", stage:"progress", title:"Entrepreneurship in the Gig Economy", sub:"Freelancer recruitment strategy in early-stage entrepreneurship", authors:["Charles Eesley","Melissa Valentine","Michael Bernstein","Amin Saberi","Zhuoxuan Li"]},
+  {theme:"infrastructure", stage:"progress", title:"State-Led Integration of Innovation Ecosystems", sub:"The case of China's Greater Bay Area, a multilayer patent analytics study", authors:["Zhuoxuan Li"]},
+  {theme:"infrastructure", stage:"progress", title:"A Policy Research Framework for Monitoring Hong Kong's Innovation and Entrepreneurship Ecosystem", sub:"For cross-policy evaluation and coordination", authors:["Zhuoxuan Li","et al."]},
+  {theme:"infrastructure", stage:"progress", title:"A Course-Level Operating Infrastructure for Enterprise-Involved Innovation Courses", authors:["Zhuoxuan Li","You (Willow) Wu","Yipu Deng"]},
+  {theme:"infrastructure", stage:"progress", title:"Designing Short-Term Academic Study Tours for Integration and Meaning Making", sub:"An AI-scaffolded, synthesis-oriented approach", authors:["Zhuoxuan Li","et al."]},
+];
+const ME = "Zhuoxuan Li";
+const themeById = Object.fromEntries(THEMES.map(t=>[t.id,t]));
+const stageById = Object.fromEntries(STAGES.map(s=>[s.id,s]));
+const list = document.getElementById("research-list");
+const esc = s => String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+function authorLine(authors){
+  return authors.map(n => n === ME ? '<span class="me">'+esc(n)+'</span>' : esc(n)).join(", ");
+}
+function itemHTML(p, mode){
+  const cross = mode === "theme"
+    ? '<span class="tag">'+esc(stageById[p.stage].title.replace(/s$/,""))+'</span>'
+    : '<span class="tag">'+esc(themeById[p.theme].title.split(":")[0])+'</span>';
+  return '<article class="item"><h3 class="item-title">'+esc(p.title)+'</h3>'
+    + (p.sub ? '<p class="item-sub">'+esc(p.sub)+'</p>' : '')
+    + '<div class="item-meta">'+cross
+    + (p.fund ? '<span class="tag fund">'+esc(p.fund)+'</span>' : '')
+    + '<span>'+authorLine(p.authors)+'</span></div></article>';
+}
+function render(mode){
+  const groups = mode === "theme" ? THEMES : STAGES;
+  list.innerHTML = groups.map(g=>{
+    const rows = PAPERS.filter(p => (mode === "theme" ? p.theme : p.stage) === g.id);
+    if(!rows.length) return "";
+    return '<div class="group"><div class="group-head"><span class="group-count">'+rows.length+'</span><h3 class="group-title">'+esc(g.title)+'</h3><p class="group-blurb">'+esc(g.blurb)+'</p></div>'+rows.map(p=>itemHTML(p,mode)).join("")+'</div>';
+  }).join("");
+}
+document.querySelectorAll(".switch button").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    document.querySelectorAll(".switch button").forEach(b=>b.setAttribute("aria-pressed", String(b === btn)));
+    render(btn.dataset.mode);
+  });
+});
+render("theme");
 document.getElementById("yr").textContent = new Date().getFullYear();
 </script>
 </body>
