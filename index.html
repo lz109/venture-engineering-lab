@@ -36,8 +36,9 @@ body{
   font-size:16px;
   line-height:1.58;
   -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
 }
-img{display:block;max-width:100%}
+img{display:block;max-width:100%;height:auto}
 a{color:var(--green)}
 .skip{position:absolute;left:-999px;top:0;background:var(--green-dark);color:#fff;padding:.7rem 1rem;z-index:20}
 .skip:focus{left:.75rem;top:.75rem}
@@ -47,6 +48,7 @@ a{color:var(--green)}
 .progress span{display:block;width:0;height:100%;background:var(--orange);transition:width .12s linear}
 .nav-inner{min-height:84px;display:flex;align-items:center;justify-content:space-between;gap:1.5rem}
 .brand{display:flex;align-items:center;gap:.85rem;color:var(--green);text-decoration:none;min-width:0}
+.brand > span:last-child{min-width:0}
 .mark{width:34px;height:54px;background:var(--orange);border-radius:19px;position:relative;flex:0 0 auto}
 .mark::before{content:"";position:absolute;top:7px;left:8px;width:18px;height:18px;background:#fff;border-radius:50%}
 .brand strong{display:block;color:var(--green);font-size:1.06rem;line-height:1.12}
@@ -105,6 +107,7 @@ section{padding:clamp(2.8rem,5vw,4.5rem) 0;border-bottom:1px solid var(--line)}
 h2{margin:.1rem 0 0;color:var(--green);font-size:clamp(1.85rem,3.2vw,2.75rem);font-weight:700;line-height:1.12}
 .section-intro{max-width:48rem;margin:0 0 1.4rem;color:#72746d;font-size:1.06rem}
 .panel{background:#fff;border:1px solid var(--line);padding:1.15rem}
+.panel,.project,.person,.contact-item,.metric,.group,.grant,.track-panel,.faq details{min-width:0}
 .panel.orange{border-top:5px solid var(--orange)}
 .panel.green{border-top:5px solid var(--green-2)}
 .panel h3{margin:0 0 .45rem;color:var(--green);font-size:1.08rem;line-height:1.28}
@@ -143,6 +146,7 @@ h2{margin:.1rem 0 0;color:var(--green);font-size:clamp(1.85rem,3.2vw,2.75rem);fo
   text-align:left;
   cursor:pointer;
   font:inherit;
+  min-width:0;
 }
 .group-toggle:hover .group-title{color:var(--orange)}
 .group-toggle:focus-visible{outline:2px solid var(--orange);outline-offset:-2px}
@@ -185,6 +189,7 @@ h2{margin:.1rem 0 0;color:var(--green);font-size:clamp(1.85rem,3.2vw,2.75rem);fo
 .media-band img{width:100%;height:100%;min-height:260px;object-fit:cover;border:1px solid var(--line);border-bottom:5px solid var(--orange)}
 .project-list{display:grid;gap:0;border-top:1px solid var(--line)}
 .project{display:grid;gap:.35rem;padding:1rem 0;border-bottom:1px solid var(--line)}
+.project > *{min-width:0}
 @media(min-width:740px){.project{grid-template-columns:minmax(0,1fr) 12rem;gap:1.5rem}}
 .project h3{margin:0;color:var(--green);font-size:1.02rem}
 .project p{margin:.25rem 0 0;color:var(--text);font-size:.94rem}
@@ -212,6 +217,7 @@ h2{margin:.1rem 0 0;color:var(--green);font-size:clamp(1.85rem,3.2vw,2.75rem);fo
 .contact-item{background:var(--paper);border-top:3px solid var(--orange);padding:1rem}
 .contact-item dt{margin:0 0 .25rem;color:var(--muted);font-size:.76rem;text-transform:uppercase;letter-spacing:.08em;font-weight:700}
 .contact-item dd{margin:0;color:var(--green);font-weight:700}
+.contact-item dd,.contact-item a,.contact-line a{overflow-wrap:anywhere}
 .people-grid{display:grid;gap:1rem}
 @media(min-width:760px){.people-grid{grid-template-columns:1.1fr .9fr .9fr}}
 .person{background:#fff;border:1px solid var(--line);border-top:5px solid var(--orange);padding:1.15rem}
@@ -230,7 +236,31 @@ footer .wrap{padding-top:1.2rem;padding-bottom:1.2rem;display:flex;justify-conte
 @media(max-width:760px){
   .nav-inner{align-items:flex-start;flex-direction:column;padding-top:.9rem;padding-bottom:.9rem}
   .nav-links{justify-content:flex-start;gap:.75rem 1rem}
-  h1{max-width:10ch}
+  .hero-grid{padding-top:2.5rem}
+  h1{max-width:11ch;font-size:clamp(2.45rem,13vw,3.3rem)}
+  h2{font-size:clamp(1.65rem,8vw,2.2rem)}
+  .section-grid{gap:1.35rem}
+  .media-band img{min-height:210px}
+  .back-top{right:.75rem;bottom:.75rem}
+}
+@media(max-width:939px){
+  .hero-visual::after{right:0;bottom:-10px;width:38%;height:38%}
+}
+@media(max-width:560px){
+  .group-toggle{grid-template-columns:1fr;gap:.6rem}
+  .group-count{white-space:normal}
+  .hero-actions .btn,.switch button,.track-tabs .mini-btn{flex:1 1 100%}
+  .hero-controls button{flex:1 1 calc(33.333% - .4rem)}
+  .metrics-grid{grid-template-columns:1fr}
+}
+@media(max-width:380px){
+  .wrap,.nav-inner,.hero-grid,.metrics-grid{padding-left:.85rem;padding-right:.85rem}
+  .nav-links{gap:.55rem .8rem}
+  .nav-links a{font-size:.85rem}
+  .mark{width:30px;height:48px}
+  .mark::before{left:7px;width:16px;height:16px}
+  h1{font-size:2.25rem}
+  .lead,.section-intro{font-size:1rem}
 }
 </style>
 </head>
