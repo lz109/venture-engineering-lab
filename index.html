@@ -107,7 +107,7 @@ section{padding:clamp(2.8rem,5vw,4.5rem) 0;border-bottom:1px solid var(--line)}
 h2{margin:.1rem 0 0;color:var(--green);font-size:clamp(1.85rem,3.2vw,2.75rem);font-weight:700;line-height:1.12}
 .section-intro{max-width:48rem;margin:0 0 1.4rem;color:#72746d;font-size:1.06rem}
 .panel{background:#fff;border:1px solid var(--line);padding:1.15rem}
-.panel,.project,.person,.contact-item,.metric,.group,.grant,.track-panel,.faq details{min-width:0}
+.panel,.project,.person,.contact-item,.metric,.group,.grant{min-width:0}
 .panel.orange{border-top:5px solid var(--orange)}
 .panel.green{border-top:5px solid var(--green-2)}
 .panel h3{margin:0 0 .45rem;color:var(--green);font-size:1.08rem;line-height:1.28}
@@ -172,18 +172,6 @@ h2{margin:.1rem 0 0;color:var(--green);font-size:clamp(1.85rem,3.2vw,2.75rem);fo
 .grant[hidden]{display:none}
 .grid-2,.grid-3{display:grid;gap:1rem}
 @media(min-width:760px){.grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}}
-.walkthrough{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);counter-reset:step}
-@media(min-width:820px){.walkthrough{grid-template-columns:repeat(4,1fr)}}
-.step{counter-increment:step;background:#fff;padding:1rem;min-height:170px}
-.step::before{content:"Step " counter(step);display:block;margin-bottom:.65rem;color:var(--orange);font-size:.75rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase}
-.step h3{margin:0 0 .45rem;color:var(--green);font-size:1.04rem}
-.step p{margin:0;color:var(--muted);font-size:.92rem}
-.architecture{margin-top:1.3rem;background:#fff;border:1px solid var(--line);padding:1rem}
-.flow{display:grid;gap:.75rem;align-items:center}
-@media(min-width:900px){.flow{grid-template-columns:1fr .8fr 1fr .8fr 1fr}}
-.node{border:1px solid var(--line);background:var(--green-soft);padding:1rem;text-align:center;color:var(--green);font-weight:700}
-.node.orange{background:var(--orange-soft);color:var(--orange)}
-.arrow{text-align:center;color:var(--orange);font-weight:700}
 .media-band{display:grid;gap:1.1rem;margin:1.4rem 0}
 @media(min-width:820px){.media-band{grid-template-columns:.92fr 1.08fr;align-items:stretch}}
 .media-band img{width:100%;height:100%;min-height:260px;object-fit:cover;border:1px solid var(--line);border-bottom:5px solid var(--orange)}
@@ -201,16 +189,6 @@ h2{margin:.1rem 0 0;color:var(--green);font-size:clamp(1.85rem,3.2vw,2.75rem);fo
 .project-detail{grid-column:1 / -1;margin:.3rem 0 0;padding:.8rem 1rem;background:#fff;border-left:3px solid var(--orange);color:var(--text);font-size:.92rem}
 .project-detail[hidden]{display:none}
 .callout{margin-top:1.25rem;background:var(--orange-soft);border-left:4px solid var(--orange);padding:1rem 1.1rem;max-width:48rem}
-.track-tabs{display:flex;gap:.45rem;flex-wrap:wrap;margin:0 0 1rem}
-.track-panel{background:#fff;border:1px solid var(--line);border-top:5px solid var(--orange);padding:1.1rem}
-.track-panel[hidden]{display:none}
-.track-panel h3{margin:0 0 .45rem;color:var(--green)}
-.track-panel p{margin:0 0 .75rem}
-.track-panel ul{margin:.5rem 0 0;padding-left:1.1rem}
-.faq{display:grid;gap:.75rem}
-.faq details{background:#fff;border:1px solid var(--line);padding:1rem}
-.faq summary{cursor:pointer;color:var(--green);font-weight:700}
-.faq p{margin:.7rem 0 0;color:var(--text)}
 .contact-band{background:#fff}
 .contact-grid{display:grid;gap:1rem;margin-top:1rem}
 @media(min-width:640px){.contact-grid{grid-template-columns:repeat(3,1fr)}}
@@ -230,7 +208,18 @@ h2{margin:.1rem 0 0;color:var(--green);font-size:clamp(1.85rem,3.2vw,2.75rem);fo
 .contact-line a{text-decoration:none;border-bottom:1px solid var(--line)}
 .contact-line a:hover{border-color:var(--orange);color:var(--orange)}
 footer{background:var(--green-dark);color:rgba(255,255,255,.78);font-size:.82rem}
-footer .wrap{padding-top:1.2rem;padding-bottom:1.2rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+footer a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.28)}
+footer a:hover{border-color:var(--orange)}
+.footer-main{display:grid;gap:2rem;padding-top:2.4rem;padding-bottom:2rem}
+@media(min-width:820px){.footer-main{grid-template-columns:1.1fr .9fr;align-items:start}}
+.footer-main h2{margin:0 0 .65rem;color:#fff;font-size:clamp(1.6rem,3vw,2.25rem)}
+.footer-main p{margin:0 0 1rem;color:rgba(255,255,255,.78);max-width:42rem}
+.subscribe{display:flex;gap:.55rem;flex-wrap:wrap}
+.subscribe input{flex:1 1 16rem;min-height:44px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.08);color:#fff;padding:.7rem .85rem;font:inherit}
+.subscribe input::placeholder{color:rgba(255,255,255,.62)}
+.footer-links{display:grid;gap:.7rem}
+.footer-links a{display:block;width:max-content;max-width:100%;font-weight:700}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.18);padding-top:1.2rem;padding-bottom:1.2rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 .back-top{position:fixed;right:1rem;bottom:1rem;z-index:20;opacity:0;pointer-events:none;transition:opacity .16s ease;box-shadow:0 8px 24px rgba(0,0,0,.12)}
 .back-top.show{opacity:1;pointer-events:auto}
 @media(max-width:760px){
@@ -249,7 +238,7 @@ footer .wrap{padding-top:1.2rem;padding-bottom:1.2rem;display:flex;justify-conte
 @media(max-width:560px){
   .group-toggle{grid-template-columns:1fr;gap:.6rem}
   .group-count{white-space:normal}
-  .hero-actions .btn,.switch button,.track-tabs .mini-btn{flex:1 1 100%}
+  .hero-actions .btn,.switch button{flex:1 1 100%}
   .hero-controls button{flex:1 1 calc(33.333% - .4rem)}
   .metrics-grid{grid-template-columns:1fr}
 }
@@ -311,9 +300,9 @@ footer .wrap{padding-top:1.2rem;padding-bottom:1.2rem;display:flex;justify-conte
 
   <div class="metrics" aria-label="Lab highlights">
     <div class="metrics-grid">
-      <a class="metric" href="#offerings"><strong>6</strong><span>Offerings</span></a>
+      <a class="metric" href="#offerings"><strong>3</strong><span>Audiences</span></a>
       <a class="metric" href="#research"><strong>14</strong><span>Research threads</span></a>
-      <a class="metric" href="#capstones"><strong>4</strong><span>Learner tracks</span></a>
+      <a class="metric" href="#people"><strong>3</strong><span>People</span></a>
       <a class="metric" href="https://i-school.hku.hk/"><strong>HKU</strong><span>I-School home</span></a>
     </div>
   </div>
@@ -414,60 +403,6 @@ footer .wrap{padding-top:1.2rem;padding-bottom:1.2rem;display:flex;justify-conte
     </div>
   </section>
 
-  <section id="projects">
-    <div class="wrap section-grid">
-      <header>
-        <p class="eyebrow">Lab Projects</p>
-        <h2>Systems in development.</h2>
-      </header>
-      <div>
-        <p class="section-intro">Current builds with HKU ecosystem partners.</p>
-        <div class="switch" role="group" aria-label="Filter lab projects">
-          <span class="switch-label">Show</span>
-          <button type="button" data-project-filter="all" aria-pressed="true">All</button>
-          <button type="button" data-project-filter="partner" aria-pressed="false">Partner</button>
-          <button type="button" data-project-filter="lab" aria-pressed="false">Lab</button>
-          <button type="button" data-project-filter="course" aria-pressed="false">Course</button>
-        </div>
-        <div class="project-list">
-          <article class="project" data-project-kind="partner"><div><h3>GBA Ecosystem Metrics</h3><p>Longitudinal indicators for Greater Bay Area innovation and entrepreneurship.</p></div><span>with TEA</span></article>
-          <article class="project" data-project-kind="partner"><div><h3>Patent Evaluation System</h3><p>Assessment tools for university patent disclosures, filing readiness, and licensing evidence.</p></div><span>with TTO</span></article>
-          <article class="project" data-project-kind="partner"><div><h3>Pitch Deck Evaluation and AI Mentorship</h3><p>Structured venture assessment paired with AI mentors for founder feedback between human sessions.</p></div><span>with TEC</span></article>
-          <article class="project" data-project-kind="partner"><div><h3>OPC Online Incubator</h3><p>An online incubator for AI-enabled one-person companies and solo-founder workflows.</p></div><span>with HKU W3 Institute</span></article>
-          <article class="project" data-project-kind="lab"><div><h3>Accelerator and Incubator Tools</h3><p>Reusable program-running instruments for cohort management, evaluation, and learning.</p></div><span>Lab infrastructure</span></article>
-          <article class="project" data-project-kind="course"><div><h3>Open Online Courses</h3><p>Public learning experiences in AI-native entrepreneurship and K12 AI-native game design.</p></div><span>Open education</span></article>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="capstones">
-    <div class="wrap section-grid">
-      <header>
-        <p class="eyebrow">For Learners</p>
-        <h2>Build with VEL.</h2>
-      </header>
-      <div>
-        <div class="media-band">
-          <img src="assets/capstone-studio.jpg" alt="Students building prototypes and software systems in a university studio">
-          <div>
-            <p class="section-intro">Capstone teams build useful modules for active lab systems.</p>
-            <div class="track-tabs" role="tablist" aria-label="Capstone tracks">
-              <button class="mini-btn active" type="button" role="tab" aria-selected="true" aria-controls="track-ai" data-track="track-ai">AI systems</button>
-              <button class="mini-btn" type="button" role="tab" aria-selected="false" aria-controls="track-hardware" data-track="track-hardware">Hardware</button>
-              <button class="mini-btn" type="button" role="tab" aria-selected="false" aria-controls="track-method" data-track="track-method">Methods</button>
-              <button class="mini-btn" type="button" role="tab" aria-selected="false" aria-controls="track-field" data-track="track-field">Field studies</button>
-            </div>
-            <article class="track-panel" id="track-ai" role="tabpanel"><h3>Live AI Systems</h3><p>Build features for platforms already connected to lab users.</p><ul><li>AI Career Coach</li><li>TriEval</li><li>AI Literacy Passport</li><li>PolicyIntel</li><li>AI mentors</li></ul></article>
-            <article class="track-panel" id="track-hardware" role="tabpanel" hidden><h3>Hardware Entrepreneurship</h3><p>Create analytics and decision tools for maker and hardware ventures.</p><ul><li>Crowdfunding readiness scorer</li><li>Open-hardware business model explorer</li><li>Community pulse tools</li></ul></article>
-            <article class="track-panel" id="track-method" role="tabpanel" hidden><h3>Venture Methodology</h3><p>Design software and AI copilots around proven innovation methods.</p><ul><li>Customer-discovery copilot</li><li>Prototype decision engine</li><li>PBL marketplace</li></ul></article>
-            <article class="track-panel" id="track-field" role="tabpanel" hidden><h3>Field Studies</h3><p>Run empirical studies on AI adoption and solo-founder workflows.</p><ul><li>One-person company census</li><li>AI employees field experiment</li><li>Founder workflow studies</li></ul></article>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section id="people">
     <div class="wrap section-grid">
       <header>
@@ -503,21 +438,6 @@ footer .wrap{padding-top:1.2rem;padding-bottom:1.2rem;display:flex;justify-conte
     </div>
   </section>
 
-  <section id="faq">
-    <div class="wrap section-grid">
-      <header>
-        <p class="eyebrow">FAQ</p>
-        <h2>Who is VEL for?</h2>
-      </header>
-      <div class="faq">
-        <details open><summary>Learners</summary><p>Capstones, research assistantships, and course-linked builds.</p></details>
-        <details><summary>Partners</summary><p>Evaluation tools, mentoring systems, policy analytics, and program infrastructure.</p></details>
-        <details><summary>Founders and scientists</summary><p>Venture assessment, experiment design, and evidence-building support.</p></details>
-        <details><summary>Researchers</summary><p>Collaborations on entrepreneurship, AI evaluation, innovation policy, and commercialization.</p></details>
-      </div>
-    </div>
-  </section>
-
   <section id="contact" class="contact-band">
     <div class="wrap section-grid">
       <header>
@@ -538,7 +458,22 @@ footer .wrap{padding-top:1.2rem;padding-bottom:1.2rem;display:flex;justify-conte
 </main>
 
 <footer>
-  <div class="wrap">
+  <div class="wrap footer-main">
+    <div>
+      <p class="eyebrow">Join the VEL community</p>
+      <h2>Subscribe for projects, programs, and funding opportunities.</h2>
+      <p>Get updates on research projects, community activities, grants, funding opportunities, and lab events.</p>
+      <form class="subscribe" action="mailto:zhuoxli@hku.hk" method="post" enctype="text/plain">
+        <input type="email" name="email" placeholder="Enter your email" aria-label="Email address">
+        <button class="btn" type="submit">Subscribe</button>
+      </form>
+    </div>
+    <nav class="footer-links" aria-label="Footer links">
+      <a href="#funding">Grants &amp; Funding</a>
+      <a href="mailto:zhuoxli@hku.hk">Work With Us</a>
+    </nav>
+  </div>
+  <div class="wrap footer-bottom">
     <span>© <span id="yr">2026</span> Venture Engineering Lab</span>
     <span>HKU School of Innovation</span>
   </div>
@@ -679,32 +614,12 @@ document.querySelectorAll(".offering-card").forEach(card=>{
     if(e.key === "Enter" || e.key === " "){ e.preventDefault(); toggle(); }
   });
 });
-document.querySelectorAll("[data-project-filter]").forEach(btn=>{
-  btn.addEventListener("click",()=>{
-    const filter = btn.dataset.projectFilter;
-    document.querySelectorAll("[data-project-filter]").forEach(b=>b.setAttribute("aria-pressed", String(b === btn)));
-    document.querySelectorAll("[data-project-kind]").forEach(project=>{
-      project.hidden = filter !== "all" && project.dataset.projectKind !== filter;
-    });
-  });
-});
 document.querySelectorAll("[data-grant-filter]").forEach(btn=>{
   btn.addEventListener("click",()=>{
     const filter = btn.dataset.grantFilter;
     document.querySelectorAll("[data-grant-filter]").forEach(b=>b.setAttribute("aria-pressed", String(b === btn)));
     document.querySelectorAll("[data-grant-kind]").forEach(grant=>{
       grant.hidden = filter !== "all" && grant.dataset.grantKind !== filter;
-    });
-  });
-});
-document.querySelectorAll("[data-track]").forEach(btn=>{
-  btn.addEventListener("click",()=>{
-    document.querySelectorAll("[data-track]").forEach(b=>{
-      b.classList.toggle("active", b === btn);
-      b.setAttribute("aria-selected", String(b === btn));
-    });
-    document.querySelectorAll(".track-panel").forEach(panel=>{
-      panel.hidden = panel.id !== btn.dataset.track;
     });
   });
 });
